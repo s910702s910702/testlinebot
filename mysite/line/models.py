@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-Class Ppl(models.Model):
+class Ppl(models.Model):
     name = models.CharField(max_length=50)
     sid = models.CharField(max_length=50, unique = True)
     grade = models.CharField(max_length=50)
