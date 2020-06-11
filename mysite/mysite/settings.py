@@ -15,6 +15,9 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SESSION_COOKIE_SECURE=True
+SESSION_COOKIE_HTTPONLY=True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -25,7 +28,7 @@ SECRET_KEY = '^7g!c8lh4^%$8*8-6q1y@_y=-jo8oilf)rb2o2e)f*+--yjjle'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['fff.fjucpc.tk','ea3626b7fb9f.ngrok.io',]
 
 
 # Application definition
@@ -37,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'sslserver',
+    'line'
 ]
 
 MIDDLEWARE = [
@@ -47,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+	# 'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -118,3 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LINE_CHANNEL_SECRET = 'd852ad195397ab26a95560ce97661e2d'
+LINE_CHANNEL_ACCESS_TOKEN = '05twsDolrvYl1SeQOhRFAWV/MGyBnkXM98B9pRvJ/y/HKp5rJviXn4IBo+hKjp6PchkaAlcnlos6M/Mad4ZA/L2iXGBDp9K2zfqo2RjeY6MpUPR14Mnm0vfs81wddzC2oqQdvkXXq46F3VnFR1kr/gdB04t89/1O/w1cDnyilFU='
